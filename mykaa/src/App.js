@@ -1,15 +1,14 @@
-import { Box, useColorModeValue } from "@chakra-ui/react";
-
+import { Container, useColorModeValue } from "@chakra-ui/react";
+import MainRoute from "./Routes/MainRoute";
 function App() {
-  return (
-    <Box m="0" 
-     background={useColorModeValue("#121212","white")}
-     h='100vh'
-     color={useColorModeValue("white","black")}
-    >
-       my app
-    </Box>
-  );
+	return (
+		<Container
+			background={useColorModeValue("root.black", "#f3f3f3")}
+      color={useColorModeValue("root.white", "root.black")}
+			maxW={"container.2xl"}>
+			<MainRoute />
+		</Container>
+	);
 }
 export default App;
 /* sbatrtaudkd**/
