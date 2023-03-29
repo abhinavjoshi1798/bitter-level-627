@@ -1,9 +1,13 @@
 import { Container } from "@chakra-ui/react";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { getProduct } from "../Redux/ProductReducer/action";
 
 const Home = () => {
+	const dispatch = useDispatch();
 	React.useEffect(() => {
 		document.title = "Home";
+		dispatch(getProduct())
 	}, []);
 	return (
 		<>
