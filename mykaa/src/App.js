@@ -7,7 +7,7 @@ function App() {
      h='100vh'
      color={useColorModeValue("white","black")}
     >
-       App
+       my app
     </Box>
   );
 }
