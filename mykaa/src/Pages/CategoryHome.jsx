@@ -1,11 +1,13 @@
-import { Box, Container } from "@chakra-ui/react";
-import React from "react";
 
+import Header from './../0883/components/Header';
 const CategoryHome = () => {
-  return <Box
-   h='100vh'
-   bg='root.pink.400'
-  >CategoryHome</Box>;
+  
+  return (
+    <div>
+      <Header/>
+    </div>
+    
+  )
 };
 
 export default CategoryHome;
