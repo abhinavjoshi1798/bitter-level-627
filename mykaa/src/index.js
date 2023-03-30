@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const theme = extendTheme({
 	config: {
-		initialColorMode: "light",
+		initialColorMode: "dark",
 	},
 	colors: {
 		root: {

@@ -1,0 +1,12 @@
+.admin-container {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    margin:10px;
+    box-sizing: border-box;
+  }
+  
