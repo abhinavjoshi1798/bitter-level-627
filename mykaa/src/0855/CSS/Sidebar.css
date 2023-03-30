@@ -1,0 +1,55 @@
+.sidebar {
+  flex: 0 0 250px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ff0284;
+  
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  
+  .logo span {
+    margin-left: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+  }
+  
+  li.active {
+    background-color: #444;
+  }
+  
+  li:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  li svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }

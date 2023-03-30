@@ -1,5 +1,5 @@
 
-import Header from './../0883/components/Header';
+import Header from '../0883/components/Header';
 const CategoryHome = () => {
   
   return (

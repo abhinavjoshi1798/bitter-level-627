@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import Home from '../Pages/Home'
 import Category from '../Pages/Category'
 import CategoryHome from '../Pages/CategoryHome'
+import Admin from '../Pages/admin'
+
 const MainRoute = () => {
   return (
     <div>
@@ -10,6 +12,8 @@ const MainRoute = () => {
         <Route path="/" element={<Home />} />
         <Route path="/category-home" element={<CategoryHome />} />
         <Route path="/category" element={<Category />} />
+        <Route path="/admin" element={<Admin />} />
+        
       </Routes>
     </div>
   )
