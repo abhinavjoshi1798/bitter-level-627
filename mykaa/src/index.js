@@ -18,6 +18,7 @@ const theme = extendTheme({
 			white: "#ffffff",
 			black: "#111111",
 			pink: {
+				50: "#fff5f7",
 				100: "#fed7e2",
 				200: "#fbb6ce",
 				300: "#f687b3",
@@ -45,7 +46,7 @@ const theme = extendTheme({
 
 root.render(
 	<>
-		<ColorModeScript initialColorMode={theme.config.initialColorMode} />
+		{/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
 		<ChakraProvider theme={theme}>
 			<BrowserRouter>
 				<Provider store={store}>
