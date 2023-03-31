@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import {
 	Accordion,
 	AccordionItem,
@@ -16,7 +16,7 @@ import {
 	Radio,
 	useColorModeValue,
 } from "@chakra-ui/react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 const SideBar = () => {
 	const [show, setShow] = React.useState(false);
@@ -66,7 +66,7 @@ const SideBar = () => {
 	];
 
 	const FINISH = ["Matte", "Glossy", "Metallic", "Other"];
-
+	const location = useLocation();
 	const [searchParams, setSearchParams] = useSearchParams();
 	const initial = searchParams.getAll("category_values");
 	const initialBrand = searchParams.getAll("brand_name");
@@ -268,4 +268,4 @@ const SideBar = () => {
 	);
 };
 
-export default SideBar;
+export default memo(SideBar);

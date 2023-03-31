@@ -38,6 +38,7 @@ const Inventory = () => {
 					//  border='1px solid red'
 					>
 						<Products />
+
 					</Stack>
 				</Stack>
 			</Container>
