@@ -6,7 +6,9 @@ export const getProduct = (params) => (dispatch) => {
 	axios
 		.get(URL, params)
 		.then((res) => {
-			dispatch({ type: types.GET_PRODUCT_SUCCESS, payload: res.data });
+			const total = res.data.length;
+			const obj = { total: total, data: res.data };
+			dispatch({ type: types.GET_PRODUCT_SUCCESS, payload: obj });
 		})
 		.catch((err) => {
 			dispatch({ type: types.GET_PRODUCT_FAILURE });

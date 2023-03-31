@@ -3,6 +3,7 @@ const initialState = {
 	loading: false,
 	error: false,
 	products: [],
+	total: 0,
 };
 export const reducer = (state = initialState, { type, payload }) => {
 	switch (type) {
@@ -15,7 +16,8 @@ export const reducer = (state = initialState, { type, payload }) => {
 			return {
 				...state,
 				loading: false,
-				products: payload,
+				products: payload.data ? payload.data : [],
+				total: payload.total,
 			};
 		case types.GET_PRODUCT_FAILURE:
 			return {
