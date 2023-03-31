@@ -15,8 +15,10 @@ export const getProduct = (params) => (dispatch) => {
 		});
 };
 
+
 export const singleData =(id)=>{
 		return axios.get(`https://obtainable-gray-tenor.glitch.me/allproducts/${id}`)
 		.then(res=>res.data)
 		.catch(err=>console.log(err))
 }
+

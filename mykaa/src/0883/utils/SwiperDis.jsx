@@ -1,27 +1,29 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-// import "./styles.css";
-
-// import required modules
 import { Navigation, Pagination } from "swiper";
-
 export default function App({src}) {
   return (
-    <div style={{marginTop:"10px",marginBottom:"20px"}}>
+    <div style={{marginTop:"10px",marginBottom:"20px",border: "1px solid grey",
+    boxshadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px;",
+    backgroundColor: "lightpink",
+    marginBottom: "20px",
+    "--swiper-navigation-color": "#fff",
+    "--swiper-navigation-size": "2rem",}}>
       <Swiper
-        slidesPerView={"auto"}
-        spaceBetween={30}
+        spaceBetween={15}
+        slidesPerView={1.2}
+        centeredSlides={false}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
-        modules={[Navigation]}
-        className="mySwiper"
+        navigation={true}
+        modules={[ Navigation]}
         
       >
         <SwiperSlide>

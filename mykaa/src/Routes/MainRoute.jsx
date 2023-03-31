@@ -3,7 +3,11 @@ import { Routes, Route } from 'react-router-dom'
 import Home from '../Pages/Home'
 import Category from '../Pages/Category'
 import CategoryHome from '../Pages/CategoryHome'
+
 import SingleProduct from '../0568/components/SingleProduct'
+import Admin from '../Pages/admin'
+import Allroutes from '../0855/Components/Allroutes'
+
 const MainRoute = () => {
   return (
 		<div>
@@ -13,9 +17,11 @@ const MainRoute = () => {
 				<Route path='/products' element={<Category />} />
 				<Route path='/products/:id' element={<SingleProduct />} />
 				<Route path='*' element={<h1>404 Not Found</h1>} />
+         <Route path="/admin/*" element={<Admin><Allroutes /></Admin>} />
 			</Routes>
 		</div>
   );
+
 }
 
 export default MainRoute
