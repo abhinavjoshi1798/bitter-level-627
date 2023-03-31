@@ -8,7 +8,7 @@ const Products = () => {
     <div className="products-container">
       <div className="products-header">
         <h1>Products</h1>
-        <button><Link to="/add-product" className='addpdct'>Add Product</Link></button>
+        <button><Link to="/admin/add-product" className='addpdct'>Add Product</Link></button>
       </div>
       <ProductList />
     </div>

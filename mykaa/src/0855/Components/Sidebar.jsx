@@ -17,21 +17,21 @@ const Sidebar = () => {
         <span>My Store</span>
       </div>
       <ul>
-      <Link to="/products"><li
+      <Link to="/admin/products"><li
           className={activeItem === 'products' ? 'active' : ''}
           onClick={() => handleItemClick('products')}
         >
           <FaBoxOpen />
          Products
         </li></Link> 
-        <Link to="/orders"><li
+        <Link to="/admin/orders"><li
           className={activeItem === 'orders' ? 'active' : ''}
           onClick={() => handleItemClick('orders')}
         >
           <FaShoppingCart />
           Orders
         </li></Link>
-        <Link to="/users"><li
+        <Link to="/admin/users"><li
           className={activeItem === 'users' ? 'active' : ''}
           onClick={() => handleItemClick('users')}
         >

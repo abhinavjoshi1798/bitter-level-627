@@ -21,7 +21,7 @@ const ProductCard = ({ product, onDelete }) => {
         <p className="product-card-price">${product.price}</p>
         <p className="product-card-description">{product.description}</p>
         <div className="product-card-actions">
-          <Link to={`/products/${product.id}/edit`} className="editbutton">
+          <Link to={`/admin/products/${product.id}/edit`} className="editbutton">
             Edit
           </Link>
           <button className="button" onClick={handleDeleteClick} disabled={isDeleting}>

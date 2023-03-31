@@ -1,21 +1,23 @@
-import React from 'react'
-import Products from '../pages/Products';
-import Orders from '../pages/Orders';
-import Users from '../pages/Users';
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route, useParams } from 'react-router-dom';
+import Products from '../../0855/pages/Products';
+import Orders from '../../0855/pages/Orders';
+import Users from '../../0855/pages/Users';
 import AddProduct from './AddProduct';
 import EditProduct from './EditProduct';
 
 const Allroutes = () => {
+ 
+  const { id } = useParams();
+
   return (
-    <div >
+    <div>
       <Routes>
         <Route path="/products" element={<Products />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/users" element={<Users />} />
         <Route path="/add-product" element={<AddProduct />} />
-        <Route path="/products/:id/edit" element={<EditProduct/>} />
-        
+        <Route path={`/products/${id}/edit`} element={<EditProduct />} />
       </Routes>
     </div>
   );
