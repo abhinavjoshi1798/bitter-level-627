@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 interface RatingProps {
 	rating: number;
@@ -96,7 +97,7 @@ export function ProductCard({
 	const [show, setShow] = React.useState(false);
 	const toast = useToast();
 	const randomBolean = () => Math.random() >= 0.5;
-
+	const navigate = useNavigate();
 	const { url } = media[0];
 	return (
 		<Flex alignItems='center' justifyContent='center'>
@@ -191,6 +192,7 @@ export function ProductCard({
 					</Flex>
 					<Button w='full' mt='3'
 					 colorScheme={useColorModeValue("red", "red")}
+					 onClick={() => navigate(`/products/${id}`)}
 					>
 						More Details
 					</Button>

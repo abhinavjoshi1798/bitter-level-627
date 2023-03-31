@@ -118,8 +118,8 @@ const SideBar = () => {
 				w='100%'
 				allowToggle
 				defaultIndex={[0]}
-				bg='root.black'
-				_dark={{ bg: "root.white" }}
+				bg='root.white'
+				_dark={{ bg: "root.black" }}
 				mb={4}>
 				<AccordionItem mb={4}>
 					<AccordionButton>
@@ -133,7 +133,7 @@ const SideBar = () => {
 							<RadioGroup
 								defaultValue={order}
 								colorScheme={"red"}
-								bg={useColorModeValue("green", "root.pink.50")}
+								bg={useColorModeValue("root.pink.50", "green")}
 								padding={4}
 								borderRadius={4}
 								onChange={handleSort}>
@@ -155,7 +155,7 @@ const SideBar = () => {
 				</AccordionItem>
 			</Accordion>
 			<Accordion
-				bg={useColorModeValue("root.black", "root.white")}
+				bg={useColorModeValue("root.white", "root.black")}
 				allowToggle
 				defaultIndex={[0]}
 				// border='1px solid red'

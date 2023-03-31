@@ -6,7 +6,7 @@ export const getProduct = (params) => (dispatch) => {
 	axios
 		.get(URL, params)
 		.then((res) => {
-			const total = res.data.length;
+			const total = res.headers["x-total-count"];
 			const obj = { total: total, data: res.data };
 			dispatch({ type: types.GET_PRODUCT_SUCCESS, payload: obj });
 		})
@@ -15,4 +15,10 @@ export const getProduct = (params) => (dispatch) => {
 		});
 };
 
-/// w+v== for copy things 
+
+export const singleData =(id)=>{
+		return axios.get(`https://obtainable-gray-tenor.glitch.me/allproducts/${id}`)
+		.then(res=>res.data)
+		.catch(err=>console.log(err))
+}
+

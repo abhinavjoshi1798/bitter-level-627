@@ -11,12 +11,6 @@ const Products = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const location = useLocation();
 	const dispatch = useDispatch();
-	// const intialPage = searchParams.get("page") || 1;
-	// console.log("initial page", intialPage)
-	// const [page, setPage] = React.useState(intialPage);
-	// const param = {
-	// 	page,
-	// };
 	const categoryParamas = {
 		params: {
 			category_values: searchParams.getAll("category_values"),
@@ -30,7 +24,6 @@ const Products = () => {
 	React.useEffect(() => {
 		document.title = "Category";
 		dispatch(getProduct(categoryParamas));
-		// setSearchParams(param);
 	}, [location.search]);
 	// console.log("👻 ~ file: Category.jsx:9 ~ products ~ data:", products);
 	// console.log(location.search);
@@ -76,7 +69,7 @@ const Products = () => {
 			</Grid>
 			<Pagination
 				// total={searchParams.getAll("brand_name") ? total : 60}
-				total={60}
+				total={total}
 			/>
 		</>
 	);
