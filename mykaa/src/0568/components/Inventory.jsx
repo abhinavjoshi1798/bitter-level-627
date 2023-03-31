@@ -9,7 +9,7 @@ import Products from "./Products";
 const Inventory = () => {
 	return (
 		<div>
-			<Container maxW={{ base: "100%", md: "90%", lg: "72%" }} mx='auto'>
+			<Container maxW={{ base: "100%", md: "90%", lg: "72%" }} mx='auto' mb='5'>
 				<CategoryMain />
 				<Stack
 					direction={{ base: "column", md: "row", lg: "row" }}
@@ -38,7 +38,6 @@ const Inventory = () => {
 					//  border='1px solid red'
 					>
 						<Products />
-
 					</Stack>
 				</Stack>
 			</Container>
