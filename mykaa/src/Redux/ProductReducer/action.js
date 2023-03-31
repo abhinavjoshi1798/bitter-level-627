@@ -14,3 +14,5 @@ export const getProduct = (params) => (dispatch) => {
 			dispatch({ type: types.GET_PRODUCT_FAILURE });
 		});
 };
+
+/// w+v== for copy things 

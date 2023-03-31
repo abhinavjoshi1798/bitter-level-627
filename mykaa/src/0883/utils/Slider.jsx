@@ -8,7 +8,16 @@ import { Autoplay, Navigation } from "swiper";
 
 export default function Slider({src}) {
   return (
-    <>
+    <div 
+    style={{
+      border: "1px solid grey",
+      boxshadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px;",
+      backgroundColor: "lightpink",
+      marginBottom: "20px",
+      "--swiper-navigation-color": "#fff",
+      "--swiper-navigation-size": "2rem",
+    }}
+    >
       <Swiper
         spaceBetween={15}
         slidesPerView={2.5}
@@ -45,6 +54,6 @@ export default function Slider({src}) {
         </SwiperSlide>
 
       </Swiper>
-    </>
+    </div>
   );
 }
