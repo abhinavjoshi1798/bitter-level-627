@@ -7,8 +7,8 @@ import {
   Text,
   useColorModeValue as mode,
 } from '@chakra-ui/react'
-import { FaArrowRight } from 'react-icons/fa'
 import { formatPrice } from './PriceTag'
+import Checkout from '../components/Checkout'
 const OrderSummaryItem = (props) => {
   const { label, value, children } = props
   return (
@@ -21,7 +21,7 @@ const OrderSummaryItem = (props) => {
   )
 }
 
-export const CartOrderSummary = ({total}) => {
+export const CartOrderSummary = ({total,cart}) => {
   return (
 		<Stack
 			spacing='8'
@@ -52,13 +52,7 @@ export const CartOrderSummary = ({total}) => {
 					</Text>
 				</Flex>
 			</Stack>
-			<Button
-				colorScheme='blue'
-				size='lg'
-				fontSize='md'
-				rightIcon={<FaArrowRight />}>
-				Checkout
-			</Button>
+			<Checkout total={total} cartData={cart}/>
 		</Stack>
   );
 }
