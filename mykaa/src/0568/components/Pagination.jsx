@@ -31,7 +31,7 @@ const Pagination = ({ total }) => {
 			w={{ base: "100%", md: "100%" }}
 			mb='10'>
 			<Text px='2' fontSize='sm' fontWeight='bold'>
-				Page {page} of {total}
+				Page {page} of {totleButtons}
 			</Text>
 			<ButtonGroup spacing='6'>
 				<Button
@@ -45,7 +45,7 @@ const Pagination = ({ total }) => {
 				</Button>
 				{totleButtons.map((i) => (
 					<Button
-					 display={{ base: "none", md: "inline-flex" }}
+						display={{ base: "none", md: "inline-flex" }}
 						p='2'
 						rounded='full'
 						colorScheme='red'
@@ -59,7 +59,7 @@ const Pagination = ({ total }) => {
 					rounded='100%'
 					colorScheme={useColorModeValue("red", "red")}
 					w='20px'
-					isDisabled={page === total}
+					isDisabled={page == totleButtons}
 					onClick={() => handleClick(1)}>
 					<ChevronRightIcon boxSize={6} />
 				</Button>

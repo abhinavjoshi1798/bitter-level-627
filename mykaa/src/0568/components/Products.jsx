@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { getProduct } from "../../Redux/ProductReducer/action";
 import CardSkeleton from "../utils/CardSkeleton";
-import Pagination from "./Pagination.jsx";
+import Pagination from "./Pagination";
 import { ProductCard } from "./ProductCard.tsx";
 const Products = () => {
 	const { products, loading, error,total } = useSelector((state) => state.products);
@@ -22,7 +22,7 @@ const Products = () => {
 		},
 	};
 	React.useEffect(() => {
-		document.title = "Category";
+		document.title = "Products";
 		dispatch(getProduct(categoryParamas));
 	}, [location.search]);
 	// console.log("👻 ~ file: Category.jsx:9 ~ products ~ data:", products);
