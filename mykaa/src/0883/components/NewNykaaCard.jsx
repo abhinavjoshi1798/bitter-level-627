@@ -42,40 +42,6 @@ const NewNykaaCard = ({ src }) => {
         navigation={true}
         modules={[Navigation]}
 
-        style={{
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }}
-
       >
         <SwiperSlide>
           <img
