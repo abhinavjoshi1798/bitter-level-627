@@ -8,6 +8,9 @@ import Try from "../utils/TryandBuy";
 import OnlyNykaCard from "./OnlyNykaCard";
 import NykaBottom from "./NykaBottom";
 import NewNykaaCard from "./NewNykaaCard";
+import TopPayDeals from "./TopPayDeals";
+import FeatureBrand from "./FeatureBrand";
+import NykaaEveryday from './NykaaEveryday';
 const Header = () => {
   return (
     <div>
@@ -75,6 +78,34 @@ const Header = () => {
       "https://media.istockphoto.com/id/479882136/photo/lipstick-is-melting-2.jpg?s=612x612&w=0&k=20&c=f_bJyi5hm1EqDrW_SjlZ0xhOTdj-M7PEEuZ82FtTlx4=",
       "https://media.istockphoto.com/id/924985612/photo/make-up-artist-is-working-with-face-of-gorgeous-model-cosmetic-manicure-and-make-up.jpg?s=612x612&w=0&k=20&c=g0dQePCZlL_lAQ20tmkKlHS089SyxbtziJVVpaoLoz4="
     ]}/>
+    <TopPayDeals src={[
+      "https://images-static.nykaa.com/uploads/147ea0ea-52bb-46ab-9f18-9cce4429815f.jpg?tr=w-240,cm-pad_resize",
+      "https://images-static.nykaa.com/uploads/a1b91391-8a90-4d91-9f34-d76b74af5030.jpg?tr=w-240,cm-pad_resize",
+      "https://images-static.nykaa.com/uploads/e04ac642-8800-4ca7-a0f9-2c3683cd8fd5.jpg?tr=w-240,cm-pad_resize",
+      "https://images-static.nykaa.com/uploads/d24e9fa0-8ec0-4cea-a8eb-74f416a9e7ff.jpg?tr=w-240,cm-pad_resize",
+      "https://images-static.nykaa.com/uploads/8848780a-ce6a-4366-b00e-e99ebff4ecb2.jpg?tr=w-240,cm-pad_resize",
+      "https://images-static.nykaa.com/uploads/e2bd34b7-8382-488b-8b15-f9a424a13d8d.jpg?tr=w-240,cm-pad_resize",
+      "https://images-static.nykaa.com/uploads/a42109ab-2554-4bfd-9589-947b2af4b9f9.jpg?tr=w-240,cm-pad_resize",
+      "https://images-static.nykaa.com/uploads/d5bde41e-f6d3-41d2-b21b-571fee079e07.jpg?tr=w-240,cm-pad_resize",
+      "https://images-static.nykaa.com/uploads/1e0fc3a8-7b9d-47b4-a080-da6033c8dd6c.jpg?tr=w-240,cm-pad_resize",
+      "https://images-static.nykaa.com/uploads/5acd78aa-50a8-4d82-9217-dbdf95617381.jpg?tr=w-240,cm-pad_resize",
+      ]} />
+      <FeatureBrand src={[
+        "https://images-static.nykaa.com/creatives/9972c942-45f1-4110-bf12-3f71a1cb09f7/default.png?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/creatives/c5c53f4e-91e4-4599-811a-02524f39b8cf/default.jpg?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/creatives/eb48d59a-3cb7-4320-af76-252d050307ac/default.jpg?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/creatives/65456720-a185-41b1-934f-ed62747fe254/default.jpg?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/creatives/ae244539-41ce-4da5-9f95-360b4cbebeef/default.jpg?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/creatives/35e126fa-a31f-46b3-a159-1005b716eeef/default.jpg?tr=w-240,cm-pad_resize"
+      ]}/>
+      <NykaaEveryday src={[
+        "https://images-static.nykaa.com/uploads/dc519068-5338-411a-aea9-b32697f73a19.jpg?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/uploads/36223868-ebf9-4883-bb74-dc383f09cb2c.jpg?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/uploads/282435dd-69fc-4235-a44d-d6c2f9e21e01.jpg?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/uploads/38438c13-5f91-4d33-9d6a-9ab564ee8131.jpg?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/uploads/1e110d68-fa12-40ee-ae42-c6301adb5e63.jpg?tr=w-240,cm-pad_resize",
+        "https://images-static.nykaa.com/uploads/2a719e3d-d12e-4eb5-9aa5-b7b8d41e86a6.jpg?tr=w-240,cm-pad_resize"
+      ]} />
     </div>
   );
 };
