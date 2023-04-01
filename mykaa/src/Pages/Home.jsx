@@ -12,7 +12,7 @@ const Home = () => {
 	}, []);
 	return (
 		<>
-			<Container maxW={{ base: "100%", md: "90%", lg: "72%" }} mx='auto'>
+			<Container maxW={{ base: "100%", md: "90%", lg: "100%" }} mx='auto'>
 				<HomePage/>
 			</Container>
 		</>
