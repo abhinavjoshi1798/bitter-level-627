@@ -31,7 +31,7 @@ const Pagination = ({ total }) => {
 			w={{ base: "100%", md: "100%" }}
 			mb='10'>
 			<Text px='2' fontSize='sm' fontWeight='bold'>
-				Page {page} of {totleButtons}
+				Page {page} of {totleButtons.length}
 			</Text>
 			<ButtonGroup spacing='6'>
 				<Button
