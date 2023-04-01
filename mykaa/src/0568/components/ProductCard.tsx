@@ -4,17 +4,13 @@ import {
 	Box,
 	Badge,
 	useColorModeValue,
-	Icon,
-	Tooltip,
 	Code,
-	useToast,
 	Button,
 	Image,
-	Text,
 } from "@chakra-ui/react";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
-import { FiShoppingCart } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+
 
 interface RatingProps {
 	rating: number;
@@ -93,9 +89,6 @@ export function ProductCard({
 	rating_count: number;
 	image_url: string;
 }) {
-	// const { state, dispatch } = React.useContext(HelperContext);
-	const [show, setShow] = React.useState(false);
-	const toast = useToast();
 	const randomBolean = () => Math.random() >= 0.5;
 	const navigate = useNavigate();
 	const { url } = media[0];
@@ -152,7 +145,7 @@ export function ProductCard({
 							isTruncated>
 							{name}
 						</Box>
-						<Tooltip
+						{/* <Tooltip
 							label={
 								!show ? "Added to cart" : "Item already in cart"
 							}
@@ -167,7 +160,7 @@ export function ProductCard({
 								bg='none'
 								_hover={{ bg: "none" }}
 								isDisabled={show}
-								// onClick={() => addToCart(singleData)}
+								onClick={handleAddToCart}
 								cursor={"pointer"}>
 								<Icon
 									as={FiShoppingCart}
@@ -176,7 +169,7 @@ export function ProductCard({
 									alignSelf={"center"}
 								/>
 							</Button>
-						</Tooltip>
+						</Tooltip> */}
 					</Flex>
 					<Flex justifyContent='space-between' alignContent='center'>
 						<Rating rating={rating} numReviews={rating_count} />
@@ -190,10 +183,11 @@ export function ProductCard({
 							₹{price}
 						</Code>
 					</Flex>
-					<Button w='full' mt='3'
-					 colorScheme={useColorModeValue("red", "red")}
-					 onClick={() => navigate(`/products/${id}`)}
-					>
+					<Button
+						w='full'
+						mt='3'
+						colorScheme={useColorModeValue("red", "red")}
+						onClick={() => navigate(`/products/${id}`)}>
 						More Details
 					</Button>
 				</Box>

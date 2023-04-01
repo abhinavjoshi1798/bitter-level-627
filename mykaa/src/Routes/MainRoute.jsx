@@ -7,6 +7,8 @@ import CategoryHome from '../Pages/CategoryHome'
 import SingleProduct from '../0568/components/SingleProduct'
 import Admin from '../Pages/admin'
 import Allroutes from '../0855/Components/Allroutes'
+import CartPage from '../0568/Cart/CartPage'
+
 
 const MainRoute = () => {
   return (
@@ -16,6 +18,7 @@ const MainRoute = () => {
 				<Route path='/category-home' element={<CategoryHome />} />
 				<Route path='/products' element={<Category />} />
 				<Route path='/products/:id' element={<SingleProduct />} />
+				<Route path='/products/cart' element={<CartPage />} />
 				<Route path='*' element={<h1>404 Not Found</h1>} />
          <Route path="/admin/*" element={<Admin><Allroutes /></Admin>} />
 			</Routes>

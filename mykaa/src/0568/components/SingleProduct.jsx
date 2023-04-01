@@ -7,167 +7,182 @@ import {
 	Heading,
 	Text,
 	Stack,
-	StackDivider,
-	Icon,
 	useColorModeValue,
 	Box,
 	Button,
 	ButtonGroup,
+	Stat,
+	StatLabel,
+	StatNumber,
+	StatHelpText,
+	StatArrow,
+	StatGroup,
+	Tooltip,
 } from "@chakra-ui/react";
-import {
-	IoAnalyticsSharp,
-	IoLogoBitcoin,
-	IoSearchSharp,
-} from "react-icons/io5";
-import { BiRupee } from "react-icons/bi";
-import { singleData } from "../../Redux/ProductReducer/action";
+import { addToCart, singleData } from "../../Redux/ProductReducer/action";
 import { useParams } from "react-router-dom";
-const Feature = ({ text, icon, iconBg }) => {
-	return (
-		<Stack direction={"row"} align={"center"}>
-			<Flex
-				w={8}
-				h={8}
-				align={"center"}
-				justify={"center"}
-				rounded={"full"}
-				bg={iconBg}>
-				{icon}
-			</Flex>
-			<Text fontWeight={600}>{text}</Text>
-		</Stack>
-	);
-};
-
+import { Rating } from "./ProductCard.tsx";
+import { useDispatch } from "react-redux";
+import Offers from "../utils/Offers.tsx";
 export default function SingleProduct() {
 	const [data, setData] = React.useState([{ name: "loading..." }]);
+	const [image, setImage] = React.useState("");
+	const [show, setShow] = React.useState(false);
+	const [show2, setShow2] = React.useState(false);
+	const dispatch = useDispatch();
 	const [quantity, setQuantity] = React.useState(1);
 	const { id } = useParams();
-
 	React.useEffect(() => {
+		document.title = "Product Details";
 		singleData(id).then((res) => {
 			setData(res);
 		});
 	}, [id]);
 	const url = data?.media?.[0];
-	const [image, setImage] = React.useState("");
-	const [show, setShow] = React.useState(false);
 	const handleClick = (e) => {
 		setImage(e.target.src);
-		setShow(true);
+		setShow(true)
 	};
+	const handleCart = () => {
+		dispatch(addToCart(id, { quantity }));
+		setShow2(true);
+	};
+
 	return (
-		<Container maxW={"6xl"} py={12} border='1px solid red' mt='8'>
-			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-				<Flex flexDirection='column' alignItems='center'>
-					<Image
-						w={{ base: "100%", md: "80%" }}
-						rounded={"md"}
-						alt={"feature image"}
-						src={
-							show
-								? image
-								: url
-								? url.url
-								: "https://media2.giphy.com/media/2uJ0EhZnMAMDe/giphy.gif"
-						}
-						objectFit={"cover"}
-					/>
+		<>
+			<Container
+				maxW={"container.xl"}
+				py={8}
+				// border='1px solid red'
+				boxShadow={"xl"}
+				mt='8'
+				// bg={useColorModeValue("root.pink.50", "gray.800")}
+			>
+				<SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+					<Flex flexDirection='column' alignItems='center'>
+						<Image
+							w={{ base: "100%", md: "80%" }}
+							rounded={"md"}
+							alt={"feature image"}
+							src={
+								show
+									? image
+									: url
+									? url.url
+									: "https://media2.giphy.com/media/2uJ0EhZnMAMDe/giphy.gif"
+							}
+							objectFit={"cover"}
+							transition='all 0.5s cubic-bezier(.08,.52,.52,1)'
+						/>
 
-					<Flex w='100%' justifyContent={"space-between"} mt='8'>
-						{data?.media?.map((item, idx) => {
-							return (
-								(idx === 0 ||
-									idx === 3 ||
-									idx === 4 ||
-									idx === 5) && (
-									<Image
-										cursor={"pointer"}
-										key={idx}
-										w='20%'
-										rounded={"md"}
-										alt={"feature image"}
-										src={
-											data
-												? item.url
-												: "https://media2.giphy.com/media/2uJ0EhZnMAMDe/giphy.gif"
-										}
-										objectFit={"cover"}
-										boxShadow='0 0 10px 0 rgba(0,0,0,0.2)'
-										onClick={handleClick}
-									/>
-								)
-							);
-						})}
+						<Flex w='100%' justifyContent={"space-between"} mt='8'>
+							{data?.media?.map((item, idx) => {
+								return (
+									(idx === 0 ||
+										idx === 3 ||
+										idx === 4 ||
+										idx === 5) && (
+										<Image
+											border={
+												image === item.url
+													? "2px solid orange"
+													: "none"
+											}
+											cursor={"pointer"}
+											key={idx}
+											w='20%'
+											rounded={"md"}
+											alt={"feature image"}
+											src={
+												data
+													? item.url
+													: "https://media2.giphy.com/media/2uJ0EhZnMAMDe/giphy.gif"
+											}
+											objectFit={"cover"}
+											boxShadow='0 0 10px 0 rgba(0,0,0,0.2)'
+											onClick={handleClick}
+										/>
+									)
+								);
+							})}
+						</Flex>
 					</Flex>
-				</Flex>
-				<Stack spacing={4} mt='14' border='1px solid red'>
-					<Text
-						textTransform={"uppercase"}
-						color={"blue.400"}
-						fontWeight={600}
-						fontSize={"sm"}
-						bg={useColorModeValue("blue.50", "blue.900")}
-						p={2}
-						alignSelf={"flex-start"}
-						rounded={"md"}>
-						{data.brand_name}
-					</Text>
-					<Heading fontSize={{ base: "2xl", sm: "4xl", md: "3xl" }}>
-						{data?.name}
-					</Heading>
-					<Text color={"gray.500"} fontSize={"lg"}>
-						Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-						sed diam nonumy eirmod tempor invidunt ut labore
-					</Text>
-					<Stack spacing={8}>
-						<Feature
-							icon={
-								<Icon
-									as={BiRupee}
-									color={"green.500"}
-									w={5}
-									h={5}
+					<Stack
+						spacing={4}
+						mt='14'
+						// border='1px solid red'
+						// boxShadow={"lg"}
+						h='auto'
+						p='4'
+						bg={useColorModeValue("white", "gray.800")}>
+						<Text
+							textTransform={"uppercase"}
+							color={"blue.400"}
+							fontWeight={600}
+							fontSize={"sm"}
+							bg={useColorModeValue("blue.50", "blue.900")}
+							p={2}
+							alignSelf={"flex-start"}
+							rounded={"md"}>
+							{data.brand_name}
+						</Text>
+						<Heading
+							fontSize={{ base: "2xl", sm: "4xl", md: "3xl" }}>
+							{data?.name}
+						</Heading>
+						<Text color={"gray.500"} fontSize={"lg"}>
+							{url ? data?.offers[0]?.description : "lorem"}
+						</Text>
+						<StatGroup flexDirection={"column"}>
+							<Stat>
+								<StatNumber fontSize={"4xl"}>
+									£{data?.price}
+								</StatNumber>
+								<Rating
+									rating={data?.rating}
+									numReviews={data?.rating_count}
 								/>
-							}
-							iconBg={useColorModeValue("green.100", "green.900")}
-							text={data.price}
-						/>
-						<Feature
-							icon={
-								<Icon
-									as={IoAnalyticsSharp}
-									color={"yellow.500"}
-									w={5}
-									h={5}
-								/>
-							}
-							iconBg={useColorModeValue(
-								"yellow.100",
-								"yellow.900"
-							)}
-							text={"Business Planning"}
-						/>
+								<StatHelpText mt='4'>
+									Package Size {data?.pack_size}
+								</StatHelpText>
+							</Stat>
+							<StatGroup flexDirection={"row"} w={"60%"} my='4'>
+								<Stat>
+									<StatLabel>Popularity</StatLabel>
+									<StatNumber>
+										{data?.tracking_metadata?.popularity.toFixed(
+											2
+										)}
+										%
+									</StatNumber>
+									<StatHelpText>
+										<StatArrow type='increase' />
+										{data?.tracking_metadata?.es_score.toFixed(
+											2
+										) * 2}
+										%
+									</StatHelpText>
+								</Stat>
+								<Stat>
+									<StatLabel>Review</StatLabel>
+									<StatNumber>
+										{data?.star_rating_percentage}%
+									</StatNumber>
+									<StatHelpText>
+										<StatArrow type='decrease' />
+										{(
+											(data?.star_rating_percentage * 2) /
+											3
+										).toFixed(2)}
+										%
+									</StatHelpText>
+								</Stat>
+							</StatGroup>
+						</StatGroup>
 
-						<Feature
-							icon={
-								<Icon
-									as={IoSearchSharp}
-									color={"purple.500"}
-									w={5}
-									h={5}
-								/>
-							}
-							iconBg={useColorModeValue(
-								"purple.100",
-								"purple.900"
-							)}
-							text={"Market Analysis"}
-						/>
 						<Flex
 							alignItems='center'
-							justifyContent={"space-between"}
-              >
+							justifyContent={"space-between"}>
 							<Box>
 								<ButtonGroup
 									size='md'
@@ -192,13 +207,30 @@ export default function SingleProduct() {
 									</Button>
 								</ButtonGroup>
 							</Box>
-							<Button colorScheme='green' ml='4' w='100%'>
-								Add to Cart
-							</Button>
+							<Tooltip
+								label={
+									!show
+										? "Added to cart"
+										: "Item already in cart"
+								}
+								bg='white'
+								placement={"top"}
+								color={"gray.800"}
+								fontSize={"1em"}>
+								<Button
+									colorScheme='green'
+									ml='4'
+									w='100%'
+									onClick={handleCart}
+									isDisabled={show2}>
+									Add to Cart
+								</Button>
+							</Tooltip>
 						</Flex>
 					</Stack>
-				</Stack>
-			</SimpleGrid>
-		</Container>
+				</SimpleGrid>
+			</Container>
+			<Offers offers={data?.offers} />
+		</>
 	);
 }
