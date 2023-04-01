@@ -15,7 +15,7 @@ const NykaBottom = () => {
             <Box marginTop={"10px"}>
             <img src="https://images-static.nykaa.com/creatives/0a3cf7a9-db95-4b9f-8687-d9183fa572e3/default.png?tr=w-240,cm-pad_resize" alt="" width={"100%"}/>
             <Box marginLeft={"10px"}>
-            <Heading fontSize={"xl"} color={"red"}>Flat 10% Off</Heading>
+            <Heading fontSize={"xl"} color={"red"}>Lancome L' Absolu Rouge Cream</Heading>
             <Text fontSize={"l"} color={"grey"}>On Bestsellers!</Text>
             </Box>
             

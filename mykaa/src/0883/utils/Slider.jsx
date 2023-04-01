@@ -13,7 +13,7 @@ export default function Slider({src}) {
       border: "1px solid grey",
       boxshadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px;",
       backgroundColor: "lightpink",
-      marginBottom: "20px",
+      marginBottom: "10px",
       "--swiper-navigation-color": "#fff",
       "--swiper-navigation-size": "2rem",
     }}
