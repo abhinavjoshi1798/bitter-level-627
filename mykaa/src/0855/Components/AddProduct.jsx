@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import '../CSS/addproduct.css';
+import '../CSS/addproduct.css';
 function AddProduct() {
   const [product, setProduct] = useState({
     name: "",

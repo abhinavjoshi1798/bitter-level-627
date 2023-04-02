@@ -28,7 +28,7 @@ const Orders = () => {
   };
 
   const handleDeleteOrder = (orderId) => {
-    axios.delete(`/api/orders/${orderId}`)
+    axios.delete(`https://obtainable-gray-tenor.glitch.me/orders/${orderId}`)
       .then(() => {
         const filteredOrders = orders.filter(order => order.id !== orderId);
         setOrders(filteredOrders);

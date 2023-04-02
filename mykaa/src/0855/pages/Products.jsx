@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductList from '../Components/ProductList';
-// import '../CSS/products.css';
+import '../CSS/products.css';
 
 const Products = () => {
   return (
