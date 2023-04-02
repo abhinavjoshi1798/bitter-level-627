@@ -1,0 +1,109 @@
+.userdata {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-table th {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .user-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  .user-row:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #cc0000;
+  }
+  
+  .user-table tr:first-child th {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .user-table tr:last-child td {
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .user-table td:first-child {
+    font-weight: bold;
+  }
+  
+  .add-user-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .add-user-button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .user-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-form input[type="text"],
+  .user-form input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .user-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .user-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
