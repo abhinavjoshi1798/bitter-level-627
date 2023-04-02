@@ -49,7 +49,7 @@ const Pagination = ({ total }) => {
 						p='2'
 						rounded='full'
 						colorScheme='red'
-						bg={page === i ? "#f24d43" : "gray.300"}
+						bg={page === i ? "#f4b1b1" : "gray.300"}
 						onClick={() => setPage(i)}
 						key={i}>
 						{i}
