@@ -124,7 +124,8 @@ const SideBar = () => {
 									"root.pink.50",
 									"#f4b1b1"
 								)}
-								color={useColorModeValue('white','black')}
+
+								color={useColorModeValue('black','white')}
 								padding={4}
 								borderRadius={4}
 								onChange={handleSort}>
