@@ -1,7 +1,7 @@
 import { Container, useColorModeValue } from "@chakra-ui/react";
 import MainRoute from "./Routes/MainRoute";
-import MainNav from "./0603/Components/NavBar/MainNav";
 import Footer from "./0603/Components/Footer/Footer";
+import Navbar from "./0603/Components/NavBar";
 function App() {
   return (
     <Container
@@ -10,7 +10,7 @@ function App() {
       maxW={"container.2xl"}
     >
       {/* // navbar */}
-      <MainNav/>
+      <Navbar/>
       <MainRoute />
       {/* // footer */}
       <Footer/>
