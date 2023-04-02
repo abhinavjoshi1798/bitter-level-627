@@ -13,13 +13,13 @@ export const CartItem = (props) => {
 	const {
 		name,
 		media: [{ url: imageUrl }],
-		offers: [{ description }],
+		offers,
 		plp_offer: isGiftWrapping,
 		quantity,
 		price,
 		onClickDelete,
 	} = props;
-
+  const description = offers?offers[0]?.description:"";
 	return (
 		<Flex
 			direction={{
