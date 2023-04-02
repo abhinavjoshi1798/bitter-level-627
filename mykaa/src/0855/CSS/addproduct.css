@@ -1,11 +1,11 @@
-h2 {
+.addContainer h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
   font-weight: bolder;
 }
 
-form {
+.addpdct {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -13,41 +13,43 @@ form {
   font-size: 1.2rem;
 }
 
-div {
+.addpdct div {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
 }
 
-label {
+.addpdct label {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: black;
 }
 
-input {
+.addpdct input {
   padding: 0.8rem;
   font-size: 1.2rem;
   border: none;
+  color: black;
   border-radius: 6px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-input:focus {
+.addpdct input:focus {
   outline: none;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-input[type="number"]::-webkit-inner-spin-button,
+.addpdct input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type="number"] {
+.addpdct input[type="number"] {
   -moz-appearance: textfield;
 }
 
-button[type="submit"] {
+.addpdct button[type="submit"] {
   background-color: #0077FF;
   color: white;
   border: none;
@@ -60,23 +62,8 @@ button[type="submit"] {
   transition: all 0.2s ease-in-out;
 }
 
-button[type="submit"]:hover {
+.addpdct button[type="submit"]:hover {
   background-color: #005CE6;
   transform: translateY(-2px);
 }
 
-@media screen and (max-width: 768px) {
-  form {
-    width: 90%;
-  }
-
-  input {
-    padding: 0.6rem;
-    font-size: 1rem;
-  }
-
-  button[type="submit"] {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
-}

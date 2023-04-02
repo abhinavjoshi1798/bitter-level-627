@@ -1,48 +1,67 @@
-.editform {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 50px auto;
-  width: 80%;
-  max-width: 800px;
-  padding: 20px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-}
-
-h2 {
+.editcontainer h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
+  font-weight: bolder;
 }
 
-label {
+.editform {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+.editform div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.editform label {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
-input[type="text"],
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 1rem;
-  border-radius: 5px;
+.editform input {
+  padding: 0.8rem;
+  font-size: 1.2rem;
   border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-input[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
+.editform input:focus {
+  outline: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.editform input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.editform input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.editform button[type="submit"] {
+  background-color: #0077FF;
+  color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 6px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  margin-top: 2rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
 }
 
-input[type="submit"]:hover {
-  background-color: #0062cc;
+.editform button[type="submit"]:hover {
+  background-color: #005CE6;
+  transform: translateY(-2px);
 }
+
