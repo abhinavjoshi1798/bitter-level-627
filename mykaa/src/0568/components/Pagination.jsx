@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { memo } from "react";
 import { useSearchParams } from "react-router-dom";
-const Pagination = ({ total }) => {
+const Pagination = ({ total=60 }) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const totleButtons = new Array(Math.ceil(total/10)).fill(0).map((_, i) => i + 1);
 	const initialPagw = Number(searchParams.get("page")) || 1;

@@ -16,7 +16,7 @@ import {
 	Radio,
 	useColorModeValue,
 } from "@chakra-ui/react";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const SideBar = () => {
 	const [show, setShow] = React.useState(false);
@@ -39,18 +39,6 @@ const SideBar = () => {
 		"Smashbox",
 	];
 
-	const MATERIAL = [
-		"Leather",
-		"Wood",
-		"Metal",
-		"Plastic",
-		"Glass",
-		"Paper",
-		"Stone",
-		"Fabric",
-		"Other",
-	];
-
 	const COLOR = [
 		"Black",
 		"White",
@@ -66,7 +54,6 @@ const SideBar = () => {
 	];
 
 	const FINISH = ["Matte", "Glossy", "Metallic", "Other"];
-	const location = useLocation();
 	const [searchParams, setSearchParams] = useSearchParams();
 	const initial = searchParams.getAll("category_values");
 	const initialBrand = searchParams.getAll("brand_name");
