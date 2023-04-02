@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import '../CSS/addproduct.css';
-import { Navigate } from "react-router-dom";
-
+// import '../CSS/addproduct.css';
 function AddProduct() {
   const [product, setProduct] = useState({
     name: "",

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+
 import "../CSS/editproduct.css";
+
 import { useParams } from "react-router-dom";
 function EditProduct() {
   const { id }=useParams();
