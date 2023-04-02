@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../CSS/addproduct.css";
+import "../CSS/editproduct.css";
 import { useParams } from "react-router-dom";
 function EditProduct() {
   const { id }=useParams();
@@ -42,7 +42,7 @@ function EditProduct() {
       alert("Product Edited successfully!");
   };
 
-  return (<>
+  return (<div className="editcontainer">
     <h2>Edit Product</h2>
     <form onSubmit={handleSubmit} className="editform">
       <div>
@@ -169,7 +169,7 @@ function EditProduct() {
       </div>
 
       <button type="submit">Edit Product</button>
-    </form></>
+    </form></div>
   );
 }
 

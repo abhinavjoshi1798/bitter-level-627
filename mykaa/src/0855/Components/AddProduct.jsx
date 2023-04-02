@@ -36,9 +36,9 @@ function AddProduct() {
       
   };
 
-  return (<>
+  return (<div className="addContainer">
   <h2>Add Product</h2>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="addpdct">
       <div>
         <label htmlFor="name">Name:</label>
         <input
@@ -193,7 +193,7 @@ function AddProduct() {
   />
 </div>
 <button type="submit">Add Product</button>
-</form></>
+</form></div>
 
   );
 }

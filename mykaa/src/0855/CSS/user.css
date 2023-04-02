@@ -2,7 +2,16 @@
     padding: 20px;
     background-color: #f4f4f4;
     border-radius: 10px;
+
   }
+
+  .userdata h2{
+    text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bolder;
+}
+  
   
   .user-table {
     width: 100%;
