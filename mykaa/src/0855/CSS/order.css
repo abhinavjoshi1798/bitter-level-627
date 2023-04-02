@@ -1,0 +1,113 @@
+.ordercontainer {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ordercontainer h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+  
+  .ordertable {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+  }
+  
+  .ordertable th,
+  .ordertable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .ordertable th {
+    background-color: #f5f5f5;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .ordertable td p {
+    margin: 5px 0;
+  }
+  
+  .ordertable td img {
+    width: 90px;
+    height: 80px;
+    margin-top: 5px;
+    object-fit: cover;
+  }
+  
+  .ordertable td button {
+    background-color: #e81f33;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .ordertable td button:hover {
+    background-color: #bf2534;
+  }
+  
+  .ordertable td select {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .ordertable td select:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .ordertable td select:focus {
+    box-shadow: 0 0 5px #007bff;
+  }
+  
+  .ordertable td select option {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .ordertable td select option:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .ordertable td:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (max-width: 768px) {
+    .ordertable td {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .ordertable td p:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    
+    .ordertable td img {
+      width: 70px;
+      height: 60px;
+    }
+  }
+  
