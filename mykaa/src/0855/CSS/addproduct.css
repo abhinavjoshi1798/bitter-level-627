@@ -1,49 +1,69 @@
-.add-product-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .add-product-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .form-row {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  .form-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .form-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  
-  .form-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4caf50;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .form-button:hover {
-    background-color: #3e8e41;
-  }
-  
+.addContainer h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: bolder;
+}
+
+.addpdct {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+.addpdct div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.addpdct label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.addpdct input {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  border: none;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.addpdct input:focus {
+  outline: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.addpdct input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.addpdct input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.addpdct button[type="submit"] {
+  background-color: #0077FF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.addpdct button[type="submit"]:hover {
+  background-color: #005CE6;
+  transform: translateY(-2px);
+}
+

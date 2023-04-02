@@ -1,79 +1,200 @@
-import React, { useState } from 'react';
-import '../CSS/addproduct.css'
+import React, { useState } from "react";
+import '../CSS/addproduct.css';
+import { Navigate } from "react-router-dom";
 
 function AddProduct() {
-  const [name, setName] = useState('');
-  const [brand, setBrand] = useState('');
-  const [price, setPrice] = useState(0);
-  const [description, setDescription] = useState('');
-  const [image, setImage] = useState(null);
+  const [product, setProduct] = useState({
+    name: "",
+    price: 0,
+    quantity: 0,
+    rating: 4.5,
+    rating_count: 20774,
+    brand_name: "",
+    tracking_metadata: {
+      es_score: 0,
+      popularity: 0,
+    },
+    media: [
+      { type: "image", url: "" },
+      { type: "image", url: "" },
+      { type: "image", url: "" },
+      { type: "image", url: "" },
+    ],
+  });
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleBrandChange = (event) => {
-    setBrand(event.target.value);
-  };
-
-  const handlePriceChange = (event) => {
-    setPrice(event.target.value);
-  };
-
-  const handleDescriptionChange = (event) => {
-    setDescription(event.target.value);
-  };
-
-  const handleImageChange = (event) => {
-    setImage(event.target.files[0]);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const formData = new FormData();
-formData.append('name', name);
-formData.append('brand_name', brand);
-formData.append('price', price);
-formData.append('description', description);
-formData.append('image_url', image);
-
-    fetch('https://obtainable-gray-tenor.glitch.me/allproducts', {
-      method: 'POST',
-      body: formData,
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("https://obtainable-gray-tenor.glitch.me/allproducts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(product),
     })
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+      .catch((err) => console.log(err));
+      alert("Product added successfully!");
+      
   };
 
-  return (
-    <div className="add-product-container">
-      <h1>Add Product</h1>
-      <form onSubmit={handleSubmit} className="add-product-form">
-        <div className="form-row">
-          <label htmlFor="product-name" className="form-label">Name:</label>
-          <input type="text" value={name} onChange={handleNameChange} className="form-input" id="product-name" />
-        </div>
-        <div className="form-row">
-          <label htmlFor="product-brand" className="form-label">Brand:</label>
-          <input type="text" value={brand} onChange={handleBrandChange} className="form-input" id="product-brand" />
-        </div>
-        <div className="form-row">
-          <label htmlFor="product-price" className="form-label">Price:</label>
-          <input type="number" value={price} onChange={handlePriceChange} className="form-input" id="product-price" />
-        </div>
-        <div className="form-row">
-          <label htmlFor="product-description" className="form-label">Description:</label>
-          <textarea value={description} onChange={handleDescriptionChange} className="form-input" id="product-description"></textarea>
-        </div>
-        <div className="form-row">
-          <label htmlFor="product-image" className="form-label">Image:</label>
-          <input type="file" onChange={handleImageChange} className="form-input" id="product-image" />
-        </div>
-        <button type="submit" className="form-button">Add Product</button>
-      </form>
-    </div>
+  return (<div className="addContainer">
+  <h2>Add Product</h2>
+    <form onSubmit={handleSubmit} className="addpdct">
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          value={product.name}
+          onChange={(e) => setProduct({ ...product, name: e.target.value })}
+        />
+      </div>
+      <div>
+        <label htmlFor="price">Price:</label>
+        <input
+          type="number"
+          id="price"
+          value={product.price}
+          onChange={(e) =>
+            setProduct({ ...product, price: parseFloat(e.target.value) })
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor="quantity">Quantity:</label>
+        <input
+          type="number"
+          id="quantity"
+          value={product.quantity}
+          onChange={(e) =>
+            setProduct({ ...product, quantity: parseFloat(e.target.value) })
+          }
+        />
+      </div>
+      
+      <div>
+        <label htmlFor="brand_name">Brand Name:</label>
+        <input
+          type="text"
+          id="brand_name"
+          value={product.brand_name}
+          onChange={(e) =>
+            setProduct({ ...product, brand_name: e.target.value })
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor="es_score">ES Score:</label>
+        <input
+          type="number"
+          id="es_score"
+          value={product.tracking_metadata.es_score}
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              tracking_metadata: {
+                ...product.tracking_metadata,
+                es_score: parseFloat(e.target.value),
+              },
+            })
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor="popularity">Popularity:</label>
+        <input
+          type="number"
+          id="popularity"
+          value={product.tracking_metadata.popularity}
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              tracking_metadata: {
+                ...product.tracking_metadata,
+                popularity: parseFloat(e.target.value),
+              },
+            })
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor="img1">Image 1:</label>
+        <input
+          type="text"
+          id="img1"
+          value={product.media[0].url}
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              media: [
+                { type: "image", url: e.target.value },
+                product.media[1],
+                product.media[2],
+                product.media[3],
+              ],
+            })
+          }
+        />
+      </div>
+      <div>
+        <label htmlFor="img2">Image 2:</label>
+        <input
+          type="text"
+          id="img2"
+          value={product.media[1].url}
+          onChange={(e) =>
+            setProduct({
+              ...product,
+              media: [
+                product.media[0],
+                { type: "image", url: e.target.value },
+                product.media[2],
+                product.media[3],
+              ],
+            })
+          }
+        />
+      </div>
+      <div>
+  <label htmlFor="img3">Image 3:</label>
+  <input
+    type="text"
+    id="img3"
+    value={product.media[2].url}
+    onChange={(e) =>
+      setProduct({
+        ...product,
+        media: [
+          product.media[0],
+          product.media[1],
+          { type: "image", url: e.target.value },
+          product.media[3],
+        ],
+      })
+    }
+  />
+</div>
+<div>
+  <label htmlFor="img4">Image 4:</label>
+  <input
+    type="text"
+    id="img4"
+    value={product.media[3].url}
+    onChange={(e) =>
+      setProduct({
+        ...product,
+        media: [
+          product.media[0],
+          product.media[1],
+          product.media[2],
+          { type: "image", url: e.target.value },
+        ],
+      })
+    }
+  />
+</div>
+<button type="submit">Add Product</button>
+</form></div>
+
   );
 }
 

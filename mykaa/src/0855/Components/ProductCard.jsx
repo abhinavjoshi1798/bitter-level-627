@@ -13,13 +13,13 @@ const ProductCard = ({ product, onDelete }) => {
   return (
     <div className="product-card">
       <div className="product-card-image">
-        <img src={product.image_url} alt={product.name} />
+        <img src={product.media[0].url} alt={product.name} />
       </div>
       <div className="product-card-body">
         <h3 className="product-card-title">{product.name}</h3>
         <p className="product-card-brand">{product.brand_name}</p>
         <p className="product-card-price">${product.price}</p>
-        <p className="product-card-description">{product.description}</p>
+        
         <div className="product-card-actions">
           <Link to={`/admin/products/${product.id}/edit`} className="editbutton">
             Edit

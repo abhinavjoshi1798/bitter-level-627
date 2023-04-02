@@ -69,7 +69,9 @@ const CartPage = () => {
 					<Heading fontSize='2xl' fontWeight='extrabold'>
 						Shopping Cart ({cart.length} items)
 					</Heading>
-          {!cart.length&&<Image src='https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-2130356-1800917.png'/>}
+					{!cart.length && (
+						<Image src='https://cdni.iconscout.com/illustration/premium/thumb/empty-cart-2130356-1800917.png' />
+					)}
 					<Stack spacing='6'>
 						{cart.map((item, idx) => (
 							<CartItem
@@ -82,10 +84,12 @@ const CartPage = () => {
 				</Stack>
 
 				<Flex direction='column' align='center' flex='1'>
-					<CartOrderSummary total={totalWithQuantity} />
+					<CartOrderSummary total={totalWithQuantity} cart={cart} />
 					<HStack mt='6' fontWeight='semibold'>
 						<p>or</p>
-						<Link color={mode("blue.500", "blue.200")} to='/products'>
+						<Link
+							color={mode("blue.500", "blue.200")}
+							to='/products'>
 							Continue shopping
 						</Link>
 					</HStack>

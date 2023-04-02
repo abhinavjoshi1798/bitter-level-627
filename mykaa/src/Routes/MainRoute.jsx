@@ -8,6 +8,9 @@ import SingleProduct from '../0568/components/SingleProduct'
 import Admin from '../Pages/admin'
 import Allroutes from '../0855/Components/Allroutes'
 import CartPage from '../0568/Cart/CartPage'
+import Payment from '../0568/utils/Payment.jsx'
+
+
 
 
 const MainRoute = () => {
@@ -19,8 +22,16 @@ const MainRoute = () => {
 				<Route path='/products' element={<Category />} />
 				<Route path='/products/:id' element={<SingleProduct />} />
 				<Route path='/products/cart' element={<CartPage />} />
+				<Route path='/products/cart/payment' element={<Payment />} />
 				<Route path='*' element={<h1>404 Not Found</h1>} />
-         <Route path="/admin/*" element={<Admin><Allroutes /></Admin>} />
+				<Route
+					path='/admin/*'
+					element={
+						<Admin>
+							<Allroutes />
+						</Admin>
+					}
+				/>
 			</Routes>
 		</div>
   );

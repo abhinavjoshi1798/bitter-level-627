@@ -62,3 +62,12 @@ export const getCart = () => (dispatch) => {
 		.catch((err) => {
 		});
 }
+
+export const orderPost = (data) => {
+	return axios
+		.post("https://obtainable-gray-tenor.glitch.me/orders", data)
+		.then((res) => {
+			console.log(res.data);
+		})
+		.catch((err) => console.log(err));
+}

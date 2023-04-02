@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { memo } from "react";
 import { useSearchParams } from "react-router-dom";
-const Pagination = ({ total }) => {
+const Pagination = ({ total=60 }) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const totleButtons = new Array(Math.ceil(total/10)).fill(0).map((_, i) => i + 1);
 	const initialPagw = Number(searchParams.get("page")) || 1;
@@ -31,7 +31,7 @@ const Pagination = ({ total }) => {
 			w={{ base: "100%", md: "100%" }}
 			mb='10'>
 			<Text px='2' fontSize='sm' fontWeight='bold'>
-				Page {page} of {totleButtons}
+				Page {page} of {totleButtons.length}
 			</Text>
 			<ButtonGroup spacing='6'>
 				<Button
@@ -49,7 +49,7 @@ const Pagination = ({ total }) => {
 						p='2'
 						rounded='full'
 						colorScheme='red'
-						bg={page === i ? "#f24d43" : "gray.300"}
+						bg={page === i ? "#f4b1b1" : "gray.300"}
 						onClick={() => setPage(i)}
 						key={i}>
 						{i}
