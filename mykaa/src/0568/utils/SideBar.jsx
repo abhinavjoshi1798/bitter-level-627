@@ -133,7 +133,11 @@ const SideBar = () => {
 							<RadioGroup
 								defaultValue={order}
 								colorScheme={"red"}
-								bg={useColorModeValue("root.pink.50", "green")}
+								bg={useColorModeValue(
+									"root.pink.50",
+									"#f4b1b1"
+								)}
+								color={useColorModeValue('white','black')}
 								padding={4}
 								borderRadius={4}
 								onChange={handleSort}>

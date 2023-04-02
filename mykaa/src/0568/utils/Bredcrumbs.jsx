@@ -11,7 +11,7 @@ const Bredcrumbs = () => {
 	return (
 		<div>
 			<Breadcrumb
-				color='green.600'
+				color='black'
 				spacing='1.2rem'
 				separator={
 					<TriangleDownIcon
