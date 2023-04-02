@@ -8,6 +8,7 @@ function App() {
       // background={useColorModeValue("root.black", "#f3f3f3")}
       // color={useColorModeValue("root.white", "root.black")}
       maxW={"container.2xl"}
+      p='0'
     >
       {/* // navbar */}
       <Navbar/>
