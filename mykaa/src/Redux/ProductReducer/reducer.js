@@ -5,6 +5,8 @@ const initialState = {
 	products: [],
 	cart: [],
 	total: 0,
+	auth: false,
+	name:""
 };
 export const reducer = (state = initialState, { type, payload }) => {
 	switch (type) {
@@ -29,7 +31,13 @@ export const reducer = (state = initialState, { type, payload }) => {
 		case types.ADD_TO_CART:
 			return {
 				...state,
-				cart: payload
+				cart: payload,
+			};
+		case "LOGIN":
+			return {
+				...state,
+				auth: true,
+				name:payload
 			};
 		default:
 			return state;

@@ -114,13 +114,13 @@ export default function SingleProduct() {
 						// boxShadow={"lg"}
 						h='auto'
 						p='4'
-						bg={useColorModeValue("white", "gray.800")}>
+						bg={useColorModeValue("white", "white")}>
 						<Text
 							textTransform={"uppercase"}
 							color={"blue.400"}
 							fontWeight={600}
 							fontSize={"sm"}
-							bg={useColorModeValue("blue.50", "blue.900")}
+							bg={useColorModeValue("blue.50", "blue.50")}
 							p={2}
 							alignSelf={"flex-start"}
 							rounded={"md"}>

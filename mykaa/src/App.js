@@ -5,8 +5,8 @@ import Navbar from "./0603/Components/NavBar";
 function App() {
   return (
     <Container
-      // background={useColorModeValue("root.black", "#f3f3f3")}
-      // color={useColorModeValue("root.white", "root.black")}
+      background={useColorModeValue("root.black", "#f3f3f3")}
+      color={useColorModeValue("root.white", "root.black")}
       maxW={"container.2xl"}
       p='0'
     >

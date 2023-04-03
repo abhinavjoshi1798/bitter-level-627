@@ -15,6 +15,7 @@ import {
 	Input,
 	Textarea,
 	useToast,
+	useColorModeValue,
 } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -87,7 +88,10 @@ export default function Checkout({total,cartData}) {
 			</Button>
 			<Drawer isOpen={isOpen} placement='right' onClose={onClose}>
 				<DrawerOverlay />
-				<DrawerContent>
+				<DrawerContent
+				bg={useColorModeValue("root.pink.50", "gray.800")}
+				color={useColorModeValue("gray.700", "gray.200")}
+				>
 					<DrawerCloseButton />
 					<DrawerHeader borderBottomWidth='1px'>
 						New Address
