@@ -106,7 +106,7 @@ const SideBar = () => {
 				allowToggle
 				defaultIndex={[0]}
 				bg='root.white'
-				_dark={{ bg: "root.black" }}
+				_dark={{ bg: "root.white" }}
 				mb={4}>
 				<AccordionItem mb={4}>
 					<AccordionButton>
@@ -124,8 +124,7 @@ const SideBar = () => {
 									"root.pink.50",
 									"#f4b1b1"
 								)}
-
-								color={useColorModeValue('black','white')}
+								color={useColorModeValue("black", "black")}
 								padding={4}
 								borderRadius={4}
 								onChange={handleSort}>
@@ -147,7 +146,7 @@ const SideBar = () => {
 				</AccordionItem>
 			</Accordion>
 			<Accordion
-				bg={useColorModeValue("root.white", "root.black")}
+				bg={useColorModeValue("root.white", "root.white")}
 				allowToggle
 				defaultIndex={[0]}
 				// border='1px solid red'

@@ -80,7 +80,7 @@ function HeaderNav() {
 						color: " #FFFFFF",
 						cursor: "pointer",
 					}}
-					onClick={() => (window.location.href = "/admin/login")}>
+					onClick={() => (window.location.href = "/admin/products")}>
 					{" "}
 					<MdAdminPanelSettings size={20} />
 					Admin

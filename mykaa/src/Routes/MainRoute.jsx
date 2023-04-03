@@ -11,7 +11,9 @@ import CartPage from '../0568/Cart/CartPage'
 import Payment from '../0568/utils/Payment.jsx'
 
 
- 
+import Login from '../Pages/Login'
+import Signup from '../Pages/Signup'
+
 
 
 const MainRoute = () => {
@@ -19,9 +21,10 @@ const MainRoute = () => {
 		<div>
 			
 			<Routes>
-				<Route path='/' element={
-				    <Home />
-				} />
+				<Route path='/' element={<Home />} />
+				<Route path='/login' element={<Login />} />
+				<Route path='/signup' element={<Signup />} />
+
 				<Route path='/category-home' element={<CategoryHome />} />
 				<Route path='/products' element={<Category />} />
 				<Route path='/products/:id' element={<SingleProduct />} />
