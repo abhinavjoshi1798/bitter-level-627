@@ -31,6 +31,7 @@ const Orders = () => {
   };
 
   const handleDeleteOrder = (orderId) => {
+
     axios
 		.delete(`https://obtainable-gray-tenor.glitch.me/orders/${orderId}`)
 		.then(() => {
@@ -40,6 +41,7 @@ const Orders = () => {
 			setOrders(filteredOrders);
 		})
 		.catch((err) => console.log(err));
+
   };
 
   return (
