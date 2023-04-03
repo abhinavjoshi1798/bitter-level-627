@@ -36,7 +36,11 @@ const NavLink = ({ children }) => {
 				cursor: "pointer",
 				color: "#fb94bc",
 			}}
-      onClick={() => navigate(`/products`)}
+			onClick={() =>
+				children === "Categories"
+					? navigate(`/category-home`)
+					: navigate(`/products`)
+			}
 			textTransform='uppercase'>
 			{children}
 		</Box>
@@ -44,6 +48,8 @@ const NavLink = ({ children }) => {
 };
 
 function MainNav() {
+	const {name} = useSelector((state) => state.products);
+	const navigate = useNavigate();
 	return (
 		<>
 			<Flex
@@ -93,13 +99,14 @@ function MainNav() {
 					</InputGroup>
 
 					<Button
+					onClick={() => navigate("/login")}
 						backgroundColor={"#fc2779"}
 						color='white'
 						_hover={{
 							backgroundColor: "#FC2779",
 							color: "#FFFFFF",
 						}}>
-						Signin
+						{!name ? "Login" : name}
 					</Button>
 
 					<Link to={"/products/cart"}>

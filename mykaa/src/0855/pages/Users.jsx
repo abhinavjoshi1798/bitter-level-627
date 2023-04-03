@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import '../CSS/user.css'
+import '../CSS/user.css'
 
 function UserTable() {
   const [users, setUsers] = useState([]);

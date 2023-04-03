@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import '../CSS/order.css';
+import '../CSS/order.css';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -14,26 +14,34 @@ const Orders = () => {
   }, []);
 
   const handleUpdateStatus = (orderId, status) => {
-    axios.patch(`/api/orders/${orderId}`, { status })
-      .then(res => {
-        const updatedOrders = orders.map(order => {
-          if (order.id === res.data.id) {
-            return res.data;
-          }
-          return order;
-        });
-        setOrders(updatedOrders);
-      })
-      .catch(err => console.log(err));
+    axios
+		.patch(`https://obtainable-gray-tenor.glitch.me/orders/${orderId}`, {
+			status,
+		})
+		.then((res) => {
+			const updatedOrders = orders.map((order) => {
+				if (order.id === res.data.id) {
+					return res.data;
+				}
+				return order;
+			});
+			setOrders(updatedOrders);
+		})
+		.catch((err) => console.log(err));
   };
 
   const handleDeleteOrder = (orderId) => {
-    axios.delete(`https://obtainable-gray-tenor.glitch.me/orders/${orderId}`)
-      .then(() => {
-        const filteredOrders = orders.filter(order => order.id !== orderId);
-        setOrders(filteredOrders);
-      })
-      .catch(err => console.log(err));
+
+    axios
+		.delete(`https://obtainable-gray-tenor.glitch.me/orders/${orderId}`)
+		.then(() => {
+			const filteredOrders = orders.filter(
+				(order) => order.id !== orderId
+			);
+			setOrders(filteredOrders);
+		})
+		.catch((err) => console.log(err));
+
   };
 
   return (
