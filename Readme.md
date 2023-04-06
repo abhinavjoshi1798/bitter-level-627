@@ -28,11 +28,11 @@
 - Type : Group Project
 - Duration of Project - 6 Days
 - Total Members who contributed - 5
-  - <a style="color:#ffd41f" href="https://www.linkedin.com/in/bhupender-soni/">Bhupender Soni</a>
-  - <a style="color:#ffd41f" href="https://www.linkedin.com/in/mohima-bahadur-915353247/">Mohima Bahadur</a>
-  - <a style="color:#ffd41f" href="https://www.linkedin.com/in/kunal-mehra-thelifeofcoder/">Kunal Mehra</a>
-  - <a style="color:#ffd41f" href="https://www.linkedin.com/in/sanjay-v-36aa761b1/">Sanjay V</a>
-  - <a style="color:#ffd41f" href="https://github.com/iamgauhar">Mohammad Gauhar</a>
+  - <a style="color:#ffd41f" href="https://github.com/hrithikvishwakarma001">Hrithik Vishwakarma</a>
+  - <a style="color:#ffd41f" href="https://github.com/abhinavjoshi1798">Abhinav Joshi</a>
+  - <a style="color:#ffd41f" href="https://github.com/subrat199">Subrat</a>
+  - <a style="color:#ffd41f" href="https://github.com/Hemandh7">Hemandh</a>
+  - <a style="color:#ffd41f" href="https://github.com/adilovemom">Aditya</a>
 
 ---
 
