@@ -2,6 +2,7 @@ import { Container, useColorModeValue } from "@chakra-ui/react";
 import MainRoute from "./Routes/MainRoute";
 import Footer from "./0603/Components/Footer/Footer";
 import Navbar from "./0603/Components/NavBar";
+// import "./1265/src/App.css"
 function App() {
   return (
     <Container
