@@ -1,3 +1,12 @@
+## 🏷️ What is mykaa ?
+
+> a Hassle-Free Shopping Experience, Makeup, Tools, Beauty Tips & Advice. Your search for the best beauty products ends here. Shop from 2000+ brands at Mykaa. Authentic Products. Easy Returns. Amazing Offers & Freebies.
+
+---
+
+<br/>
+
+
 ## 🏷️ Tech Stack Used :-
 
 ### Frontend
